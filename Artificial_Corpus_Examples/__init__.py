@@ -1,0 +1,1 @@
+# Init file for the Artificial_Corpus_Examples package

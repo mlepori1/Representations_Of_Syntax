@@ -1,0 +1,150 @@
+# Symbols in the grammar are case-sensitive.
+# 
+# This grammar uses a convention that
+#    - terminals are lowercase          (president)
+#    - preterminals are capitalized     (Noun)
+#    - other nonterminals are all-caps  (NP)
+# 
+# This convention just makes grammars more readable to humans.  Thus:
+#
+#    - When *you* are writing grammars in questions 3 and 6, you should 
+#      follow this convention unless you have a good reason not to.  
+#
+#    - But your *program* should still work with grammars that don't
+#      follow this convention.  So how can your program reliably tell
+#      the difference between terminal and nonterminal symbols?  If
+#      there is at least one rule for rewriting a symbol, then that
+#      symbol is a nonterminal and should be rewritten.
+#######################
+
+# Rules for creating full sentences.
+
+1	ROOT	S
+
+1	S	DetP_s VP_s
+1	S	DetP_p VP_p
+
+1	DetP_s	Det NP_s
+1	DetP_p	Det NP_p
+
+.5	NP_s	Adj NP_s
+.5	NP_s	NP_s PP
+4	NP_s	Noun_s
+
+.5	NP_p	Adj NP_p
+.5	NP_p	NP_p PP
+4	NP_p	Noun_p
+
+1	PP	Prep DetP_s
+1	PP	Prep DetP_p
+
+1	VP_s	Verb_s DetP_s
+1	VP_s	Verb_s DetP_p
+
+1	VP_p	Verb_p DetP_s
+1	VP_p	Verb_p DetP_p
+
+	
+
+
+# Vocabulary.
+
+1	Noun_s	plane
+1	Noun_s	baker
+1	Noun_s	jester
+1	Noun_s	bird
+1	Noun_s	car
+1	Noun_s	dancer
+1	Noun_s	singer
+1	Noun_s	president
+1	Noun_s	squirrel
+1	Noun_s	squid
+1	Noun_s	cloud
+1	Noun_s	actor
+1	Noun_s	doctor
+1	Noun_s	nurse
+1	Noun_s	chair
+1	Noun_s	student
+1	Noun_s	teacher
+1	Noun_s	fern
+
+1	Noun_p	planes
+1	Noun_p	bakers
+1	Noun_p	jesters
+1	Noun_p	birds
+1	Noun_p	cars
+1	Noun_p	dancers
+1	Noun_p	singers
+1	Noun_p	presidents
+1	Noun_p	squirrels
+1	Noun_p	squids
+1	Noun_p	clouds
+1	Noun_p	actors
+1	Noun_p	doctors
+1	Noun_p	nurses
+1	Noun_p	chairs
+1	Noun_p	students
+1	Noun_p	teachers
+1	Noun_p	ferns
+
+1	Det	the
+
+1	Verb_s	eats
+1	Verb_s	pleases
+1	Verb_s	loves
+1	Verb_s	likes
+1	Verb_s	hates
+1	Verb_s	destroys
+1	Verb_s	creates
+1	Verb_s	fights
+1	Verb_s	bites
+1	Verb_s	shoots
+1	Verb_s	arrests
+1	Verb_s	takes
+1	Verb_s	leaves
+1	Verb_s	buys
+1	Verb_s	brings
+1	Verb_s	carries
+1	Verb_s	kicks
+
+1	Verb_p	eat
+1	Verb_p	please
+1	Verb_p	love
+1	Verb_p	like
+1	Verb_p	hate
+1	Verb_p	destroy
+1	Verb_p	create
+1	Verb_p	fight
+1	Verb_p	bite
+1	Verb_p	shoot
+1	Verb_p	arrest
+1	Verb_p	take
+1	Verb_p	leave
+1	Verb_p	buy
+1	Verb_p	bring
+1	Verb_p	carry
+1	Verb_p	kick
+
+1	Adj	fancy
+1	Adj	green
+1	Adj	handsome
+1	Adj	pretty
+1	Adj	large
+1	Adj	big
+1	Adj	scary
+1	Adj	spooky
+1	Adj	nice
+1	Adj	happy
+1	Adj	sad
+1	Adj	dangerous
+1	Adj	soggy
+1	Adj	sloppy
+
+1	Prep	on
+1	Prep	by
+1	Prep	near
+1	Prep	around
+
+
+
+
