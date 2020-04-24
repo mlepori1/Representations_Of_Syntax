@@ -260,8 +260,8 @@ if __name__ == "__main__":
         dep_tags = element[2]
         dep_tree = element[3]
         label = torch.FloatTensor(element[4])
-        #output = model(const_tree, dep_tree, dep_tags, seq) # For Tree Models
-        output = model(seq)[mask_idx]  # For BiLSTM
+        output = model(const_tree, dep_tree, dep_tags, seq) # For Tree Models
+        #output = model(seq)[mask_idx]  # For BiLSTM
         loss = criterion(output, label)
         train_loss += loss
         optimizer.zero_grad()
