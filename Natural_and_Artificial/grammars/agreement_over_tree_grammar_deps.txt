@@ -1,0 +1,147 @@
+# Symbols in the grammar are case-sensitive.
+# 
+# This grammar uses a convention that
+#    - terminals are lowercase          (president)
+#    - preterminals are capitalized     (Noun)
+#    - other nonterminals are all-caps  (NP)
+# 
+# This convention just makes grammars more readable to humans.  Thus:
+#
+#    - When *you* are writing grammars in questions 3 and 6, you should 
+#      follow this convention unless you have a good reason not to.  
+#
+#    - But your *program* should still work with grammars that don't
+#      follow this convention.  So how can your program reliably tell
+#      the difference between terminal and nonterminal symbols?  If
+#      there is at least one rule for rewriting a symbol, then that
+#      symbol is a nonterminal and should be rewritten.
+#######################
+
+# Rules for creating full sentences.
+
+ROOT	S	0
+
+S	DetP_s VP_s	1
+S	DetP_p VP_p	1
+
+DetP_s	Det NP_s	1
+DetP_p	Det NP_p	1
+
+NP_s	Adj NP_s	1
+NP_s	NP_s PP	0
+NP_s	Noun_s	0
+
+NP_p	Adj NP_p	1
+NP_p	NP_p PP	0
+NP_p	Noun_p	0
+
+PP	Prep DetP_s	1
+PP	Prep DetP_p	1
+
+VP_s	Verb_s DetP_s	0
+VP_s	Verb_s DetP_p	0
+
+VP_p	Verb_p DetP_s	0
+VP_p	Verb_p DetP_p	0
+
+	
+
+
+# Vocabulary.
+
+Noun_s	plane	0
+Noun_s	plant	0
+Noun_s	bear	0
+Noun_s	bird	0
+Noun_s	car	0
+Noun_s	dancer	0
+Noun_s	singer	0
+Noun_s	president	0
+Noun_s	squirrel	0
+Noun_s	cloud	0
+Noun_s	actor	0
+Noun_s	doctor	0
+Noun_s	nurse	0
+Noun_s	chair	0
+Noun_s	student	0
+Noun_s	teacher	0
+Noun_s	fern	0
+
+Noun_p	planes	0
+Noun_p	plants	0
+Noun_p	bears	0
+Noun_p	birds	0
+Noun_p	cars	0
+Noun_p	dancers	0
+Noun_p	singers	0
+Noun_p	presidents	0
+Noun_p	squirrels	0
+Noun_p	clouds	0
+Noun_p	actors	0
+Noun_p	doctors	0
+Noun_p	nurses	0
+Noun_p	chairs	0
+Noun_p	students	0
+Noun_p	teachers	0
+Noun_p	ferns	0
+
+Det	the	0
+
+Verb_s	eats	0
+Verb_s	pleases	0
+Verb_s	loves	0
+Verb_s	likes	0
+Verb_s	hates	0
+Verb_s	destroys	0
+Verb_s	creates	0
+Verb_s	fights	0
+Verb_s	bites	0
+Verb_s	shoots	0
+Verb_s	arrests	0
+Verb_s	takes	0
+Verb_s	leaves	0
+Verb_s	buys	0
+Verb_s	brings	0
+Verb_s	carries	0
+Verb_s	kicks	0
+
+Verb_p	eat	0
+Verb_p	please	0
+Verb_p	love	0
+Verb_p	like	0
+Verb_p	hate	0
+Verb_p	destroy	0
+Verb_p	create	0
+Verb_p	fight	0
+Verb_p	bite	0
+Verb_p	shoot	0
+Verb_p	arrest	0
+Verb_p	take	0
+Verb_p	leave	0
+Verb_p	buy	0
+Verb_p	bring	0
+Verb_p	carry	0
+Verb_p	kick	0
+
+Adj	fancy	0
+Adj	green	0
+Adj	handsome	0
+Adj	pretty	0
+Adj	large	0
+Adj	big	0
+Adj	scary	0
+Adj	nice	0
+Adj	happy	0
+Adj	sad	0
+Adj	dangerous	0
+Adj	evil	0
+Adj	sloppy	0
+
+Prep	on	0
+Prep	by	0
+Prep	near	0
+Prep	around	0
+
+
+
+
