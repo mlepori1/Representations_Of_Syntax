@@ -10,3 +10,5 @@ This repository is structured as follows:
 - Pretrained Models: Contains all models used in the final paper.
 
 Note: Throughout the code, the head-lexicalized model is referred to as the 'hybrid' model.
+
+* Because of an error in setting the random seed in the augment_models.py script, fine-tuning the pretrained natural language models is not guaranteed to produce the pretrained augmented models. However, the pretrained augmented models are the exact same as were used for obtaining all results presented in the paper, and this can be verified on our artificial corpus, using the test_artificial.py script.
